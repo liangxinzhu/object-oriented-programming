@@ -34,6 +34,10 @@ class Polynomial:
         return " + ".join(reversed(terms)) or "0"
     def __repr__(self):
         return self.__class__.__name__ + "(" + repr(self.coefficients) + ")"
+    def __eq__(self, other):
+        return isinstance(other, Polynomial) and \
+            self.coefficients == other.coefficients
+
 f = Polynomial((0, 1, 2))
 f = Polynomial((1, 2, 0, 1, 5))
 f.coefficients
@@ -46,11 +50,13 @@ print(f)
 (0, 1, "f") == (0., 1 + 0j, 'g')
 (0, 1, "f") == (0., 1 + 0j)
 # 
-from example_code.polynomial import Polynomial # import unsuccessful
+from example_code.polynomial import Polynomial 
 a = Polynomial((1, 0, 1))
 b = Polynomial((1, 0, 1))
 a == b 
 #
 id(a)
 id(b)
+#
+
 

@@ -37,6 +37,12 @@ class Polynomial:
     def __eq__(self, other):
         return isinstance(other, Polynomial) and \
             self.coefficients == other.coefficients
+    def __add__(self, other):
+        if isinstance(other, Number):
+            return Polynomial((self.coefficients[0] + other,) + self.coefficients[1:])
+        elif isinstance(other, Polynomial):
+            ...#there is some lines
+
 
 f = Polynomial((0, 1, 2))
 f = Polynomial((1, 2, 0, 1, 5))

@@ -1,1 +1,0 @@
-from .prime import isprime
